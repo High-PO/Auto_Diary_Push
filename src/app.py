@@ -37,10 +37,10 @@ def setup():
     return recnum
 # diary 브런치에 업로드할 TIL파일을 만드는 함수
 def crtfie():
-    os.chdir('C:/Users/GDTA/Desktop/Diary/')
+    os.chdir('<GIT_DIR>/')
     os.system("git checkout diary") 
     os.system("cls") 
-    f = open(f"C:/Users/GDTA/Desktop/Diary/diary/{tycheck}/{tmcheck}/{filename}.md",'w')
+    f = open(f"<GIT_DIR>/{tycheck}/{tmcheck}/{filename}.md",'w')
     f.write("# Today I Learned\n")
     COMMIT_MESSAGE = filename
 
@@ -56,7 +56,7 @@ def crtfie():
 def git_push():
     try:
         os.system("cls")
-        os.chdir('C:/Users/GDTA/Desktop/Diary/')
+        os.chdir('<GIT_DIR>/')
         os.system("git add -A")
         os.system(f"git commit -m {filename}")
         os.system("git push origin diary")
@@ -65,10 +65,10 @@ def git_push():
         print('Some error occured while pushing the code')    
 # main 브런치에 업로드할 체크리스트 파일을 만드는 함수
 def crtcheck():
-    os.chdir('C:/Users/GDTA/Desktop/Diary/')
+    os.chdir('<GIT_DIR>/')
     os.system("git checkout main") 
     os.system("cls") 
-    f = open(f"C:/Users/GDTA/Desktop/Diary/push_check/{filename}.md",'w')
+    f = open(f"<GIT_DIR>/push_check/{filename}.md",'w')
     f.write("# Today I Learned Check List\n")
     f.write(f"\n- {filename} push check")
 
@@ -76,7 +76,7 @@ def crtcheck():
 # main 브런치에 업로드하는 함수
 def git_check():
     try:
-        os.chdir('C:/Users/GDTA/Desktop/Diary/')       
+        os.chdir('<GIT_DIR>/')       
         os.system("git add -A")
         os.system(f"git commit -m {filename}_check")
         os.system("git push origin main")
