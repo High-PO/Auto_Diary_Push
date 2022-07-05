@@ -2,7 +2,6 @@
 import os
 import time
 from datetime import datetime
-from git import Repo
 
 #########################################################################
 # 변수 모음
